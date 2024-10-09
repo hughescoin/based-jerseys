@@ -19,19 +19,14 @@ export function useWagmiConfig() {
   }
 
   return useMemo(() => {
+    coinbaseWallet.preference = 'smartWalletOnly';
+    coinbaseWallet.appName = 'Based Jerseys';
+
     const connectors = connectorsForWallets(
       [
         {
           groupName: 'Recommended Wallet',
-          wallets: [
-            ({ chains }) =>
-              coinbaseWallet({
-                chains,
-                projectId,
-                appName: 'Based Jerseys',
-                preference: 'smartWalletOnly',
-              }),
-          ],
+          wallets: [coinbaseWallet],
         },
         {
           groupName: 'Other Wallets',
