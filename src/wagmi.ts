@@ -24,10 +24,13 @@ export function useWagmiConfig() {
         {
           groupName: 'Recommended Wallet',
           wallets: [
-            coinbaseWallet({
-              appName: 'Based Jerseys',
-              preference: 'smartWalletOnly',
-            }),
+            ({ chains }) =>
+              coinbaseWallet({
+                chains,
+                projectId,
+                appName: 'Based Jerseys',
+                preference: 'smartWalletOnly',
+              }),
           ],
         },
         {
@@ -36,7 +39,7 @@ export function useWagmiConfig() {
         },
       ],
       {
-        appName: 'onchainkit',
+        appName: 'Based Jerseys',
         projectId,
       }
     );
