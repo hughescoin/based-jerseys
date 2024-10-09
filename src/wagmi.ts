@@ -20,7 +20,6 @@ export function useWagmiConfig() {
 
   return useMemo(() => {
     coinbaseWallet.preference = 'smartWalletOnly';
-    coinbaseWallet.appName = 'Based Jerseys';
 
     const connectors = connectorsForWallets(
       [
