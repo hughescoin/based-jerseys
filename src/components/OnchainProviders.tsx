@@ -14,6 +14,7 @@ const queryClient = new QueryClient();
 
 function OnchainProviders({ children }: Props) {
   const wagmiConfig = useWagmiConfig();
+  console.log(process.env.ONCHAINKIT_API_KEY);
 
   return (
     <WagmiProvider config={wagmiConfig}>
